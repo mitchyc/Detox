@@ -117,24 +117,14 @@ describe('IOS simulator driver', () => {
       expect(applesimutils.setBiometricEnrollment).toHaveBeenCalledWith(udid, 'NO');
     });
 
-    it('matches a face by passing to AppleSimUtils', async () => {
-      await uut.matchFace();
-      expect(applesimutils.matchBiometric).toHaveBeenCalledWith(udid, 'Face');
+    it('matches biometrics by passing to AppleSimUtils', async () => {
+      await uut.matchBiometric();
+      expect(applesimutils.matchBiometric).toHaveBeenCalledWith(udid);
     });
 
-    it('fails to match a face by passing to AppleSimUtils', async () => {
-      await uut.unmatchFace();
-      expect(applesimutils.unmatchBiometric).toHaveBeenCalledWith(udid, 'Face');
-    });
-
-    it('matches a face by passing to AppleSimUtils', async () => {
-      await uut.matchFinger();
-      expect(applesimutils.matchBiometric).toHaveBeenCalledWith(udid, 'Finger');
-    });
-
-    it('fails to match a face by passing to AppleSimUtils', async () => {
-      await uut.unmatchFinger();
-      expect(applesimutils.unmatchBiometric).toHaveBeenCalledWith(udid, 'Finger');
+    it('fails to match biometrics by passing to AppleSimUtils', async () => {
+      await uut.unmatchBiometric();
+      expect(applesimutils.unmatchBiometric).toHaveBeenCalledWith(udid);
     });
   });
 });

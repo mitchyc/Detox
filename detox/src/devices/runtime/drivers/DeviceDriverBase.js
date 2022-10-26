@@ -59,19 +59,11 @@ class DeviceDriverBase {
     return '';
   }
 
-  async matchFace() {
+  async matchBiometric() {
     return '';
   }
 
-  async unmatchFace() {
-    return '';
-  }
-
-  async matchFinger() {
-    return '';
-  }
-
-  async unmatchFinger() {
+  async unmatchBiometric() {
     return '';
   }
 

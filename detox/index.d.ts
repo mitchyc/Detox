@@ -708,24 +708,14 @@ declare global {
             setBiometricEnrollment(enabled: boolean): Promise<void>;
 
             /**
-             * Simulates the success of a face match via FaceID (iOS Only)
+             * Simulates the success of a FaceID/TouchID biometrics match (iOS Only)
              */
-            matchFace(): Promise<void>;
+            matchBiometric(): Promise<void>;
 
             /**
-             * Simulates the failure of a face match via FaceID (iOS Only)
+             * Simulates the failure of a FaceID/TouchID biometrics match (iOS Only)
              */
-            unmatchFace(): Promise<void>;
-
-            /**
-             * Simulates the success of a finger match via TouchID (iOS Only)
-             */
-            matchFinger(): Promise<void>;
-
-            /**
-             * Simulates the failure of a finger match via TouchID (iOS Only)
-             */
-            unmatchFinger(): Promise<void>;
+            unmatchBiometric(): Promise<void>;
 
             /**
              * Clears the simulator keychain (iOS Only)

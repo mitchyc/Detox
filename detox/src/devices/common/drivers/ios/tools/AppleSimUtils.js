@@ -159,33 +159,25 @@ class AppleSimUtils {
     await this._execSimctl({ cmd: `launch ${udid} com.apple.springboard`, retries: 10 });
   }
 
-  async matchBiometric(udid, matchType) {
-    if (!_.includes(['Face', 'Finger'], matchType)) {
-      return;
-    }
-
+  async matchBiometric(udid) {
     const options = {
-      args: `--byId ${udid} --match${matchType}`,
+      args: `--byId ${udid} --biometricMatch`,
       retries: 1,
       statusLogs: {
-        trying: `Trying to match ${matchType}...`,
-        successful: `Matched ${matchType}!`
+        trying: `Trying to match biometrics...`,
+        successful: `Matched biometrics!`
       },
     };
     await this._execAppleSimUtils(options);
   }
 
-  async unmatchBiometric(udid, matchType) {
-    if (!_.includes(['Face', 'Finger'], matchType)) {
-      return;
-    }
-
+  async unmatchBiometric(udid) {
     const options = {
-      args: `--byId ${udid} --unmatch${matchType}`,
+      args: `--byId ${udid} --biometricNonmatch`,
       retries: 1,
       statusLogs: {
-        trying: `Trying to unmatch ${matchType}...`,
-        successful: `Unmatched ${matchType}!`
+        trying: `Trying to unmatch biometrics...`,
+        successful: `Unmatched biometrics!`
       },
     };
     await this._execAppleSimUtils(options);

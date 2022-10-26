@@ -21,8 +21,7 @@ class RuntimeDevice {
       'enableSynchronization',
       'installApp',
       'launchApp',
-      'matchFace',
-      'matchFinger',
+      'matchBiometric',
       'openURL',
       'pressBack',
       'relaunchApp',
@@ -43,8 +42,7 @@ class RuntimeDevice {
       'takeScreenshot',
       'terminateApp',
       'uninstallApp',
-      'unmatchFace',
-      'unmatchFinger',
+      'unmatchBiometric',
       'unreverseTcpPort',
     ]);
 
@@ -148,23 +146,13 @@ class RuntimeDevice {
     await this.deviceDriver.setBiometricEnrollment(yesOrNo);
   }
 
-  async matchFace() {
-    await this.deviceDriver.matchFace();
+  async matchBiometric() {
+    await this.deviceDriver.matchBiometric();
     await this.deviceDriver.waitForActive();
   }
 
-  async unmatchFace() {
-    await this.deviceDriver.unmatchFace();
-    await this.deviceDriver.waitForActive();
-  }
-
-  async matchFinger() {
-    await this.deviceDriver.matchFinger();
-    await this.deviceDriver.waitForActive();
-  }
-
-  async unmatchFinger() {
-    await this.deviceDriver.unmatchFinger();
+  async unmatchBiometric() {
+    await this.deviceDriver.unmatchBiometric();
     await this.deviceDriver.waitForActive();
   }
 

@@ -116,20 +116,12 @@ class SimulatorDriver extends IosDriver {
     await this._applesimutils.setBiometricEnrollment(this.udid, yesOrNo);
   }
 
-  async matchFace() {
-    await this._applesimutils.matchBiometric(this.udid, 'Face');
+  async matchBiometric() {
+    await this._applesimutils.matchBiometric(this.udid);
   }
 
-  async unmatchFace() {
-    await this._applesimutils.unmatchBiometric(this.udid, 'Face');
-  }
-
-  async matchFinger() {
-    await this._applesimutils.matchBiometric(this.udid, 'Finger');
-  }
-
-  async unmatchFinger() {
-    await this._applesimutils.unmatchBiometric(this.udid, 'Finger');
+  async unmatchBiometric() {
+    await this._applesimutils.unmatchBiometric(this.udid);
   }
 
   async sendToHome() {

@@ -86,10 +86,8 @@ This is the most flexible way of editing the launch arguments. Refer to the [lau
 - [`device.captureViewHierarchy([name])`](#devicecaptureviewhierarchyname)
 - [`device.shake()` **iOS Only**](#deviceshake-ios-only)
 - [`device.setBiometricEnrollment(bool)` **iOS Only**](#devicesetbiometricenrollmentbool-ios-only)
-- [`device.matchFace()` **iOS Only**](#devicematchface-ios-only)
-- [`device.unmatchFace()` **iOS Only**](#deviceunmatchface-ios-only)
-- [`device.matchFinger()` **iOS Only**](#devicematchfinger-ios-only)
-- [`device.unmatchFinger()` **iOS Only**](#deviceunmatchfinger-ios-only)
+- [`device.matchBiometric()` **iOS Only**](#devicematchbiometric-ios-only)
+- [`device.unmatchBiometric()` **iOS Only**](#deviceunmatchbiometric-ios-only)
 - [`device.clearKeychain()` **iOS Only**](#deviceclearkeychain-ios-only)
 - [`device.setStatusBar()` **iOS Only**](#devicesetstatusbar-ios-only)
 - [`device.resetStatusBar()` **iOS Only**](#deviceresetstatusbar-ios-only)
@@ -456,21 +454,13 @@ await device.setBiometricEnrollment(true);
 await device.setBiometricEnrollment(false);
 ```
 
-#### `device.matchFace()` **iOS Only**
+#### `device.matchBiometric()` **iOS Only**
 
-Simulates the success of a face match via Face ID
+Simulates the success of a Face ID/Touch ID match.
 
-#### `device.unmatchFace()` **iOS Only**
+#### `device.unmatchBiometric()` **iOS Only**
 
-Simulates the failure of face match via Face ID
-
-#### `device.matchFinger()` **iOS Only**
-
-Simulates the success of a finger match via Touch ID
-
-#### `device.unmatchFinger()` **iOS Only**
-
-Simulates the failure of a finger match via Touch ID
+Simulates the failure of a Face ID/Touch ID match.
 
 #### `device.clearKeychain()` **iOS Only**
 

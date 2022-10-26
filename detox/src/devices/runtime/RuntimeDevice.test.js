@@ -753,32 +753,18 @@ describe('Device', () => {
     expect(driverMock.driver.setBiometricEnrollment).toHaveBeenCalledTimes(1);
   });
 
-  it(`matchFace() should pass to device driver`, async () => {
+  it(`matchBiometric() should pass to device driver`, async () => {
     const device = await aValidDevice();
-    await device.matchFace();
+    await device.matchBiometric();
 
-    expect(driverMock.driver.matchFace).toHaveBeenCalledTimes(1);
+    expect(driverMock.driver.matchBiometric).toHaveBeenCalledTimes(1);
   });
 
-  it(`unmatchFace() should pass to device driver`, async () => {
+  it(`unmatchBiometric() should pass to device driver`, async () => {
     const device = await aValidDevice();
-    await device.unmatchFace();
+    await device.unmatchBiometric();
 
-    expect(driverMock.driver.unmatchFace).toHaveBeenCalledTimes(1);
-  });
-
-  it(`matchFinger() should pass to device driver`, async () => {
-    const device = await aValidDevice();
-    await device.matchFinger();
-
-    expect(driverMock.driver.matchFinger).toHaveBeenCalledTimes(1);
-  });
-
-  it(`unmatchFinger() should pass to device driver`, async () => {
-    const device = await aValidDevice();
-    await device.unmatchFinger();
-
-    expect(driverMock.driver.unmatchFinger).toHaveBeenCalledTimes(1);
+    expect(driverMock.driver.unmatchBiometric).toHaveBeenCalledTimes(1);
   });
 
   it(`setStatusBar() should pass to device driver`, async () => {
